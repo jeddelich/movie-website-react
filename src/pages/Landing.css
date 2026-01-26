@@ -7,17 +7,20 @@
     height: 100%;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .row {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    margin-bottom: 8vh;
 }
 
 .landing__img--wrapper {
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
 }
 
 .landing__img {
