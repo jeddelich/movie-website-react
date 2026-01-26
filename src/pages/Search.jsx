@@ -1,7 +1,8 @@
+import './Search.css'
 
 function Search() {
   return (
-    <div>Search</div>
+    <div className="movie__list"></div>
   )
 }
 
