@@ -2,9 +2,20 @@
   position: relative;
   margin: 0 16px;
   width: 80%;
-  /* opacity: 0;
-  animation: fade-in 2s 3s forwards;
-  transition: top 500ms ease; */
+  transform: translateX(160px);
+  opacity: 0;
+  animation: fade-in-left 1500ms ease forwards;
+}
+
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(120px);    
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 #search-bar {

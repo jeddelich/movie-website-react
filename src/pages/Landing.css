@@ -26,4 +26,18 @@
 .landing__img {
     width: 100%;
     height: 100%;
+    transform: translateX(-160px);
+    opacity: 0;
+    animation: fade-in-right 1500ms ease forwards;
+}
+
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(-120px);    
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
