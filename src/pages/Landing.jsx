@@ -1,9 +1,10 @@
 import "./Landing.css";
-import landing from "../assets/landing.svg";
+import landing from "../assets/landing__img.svg";
 import SearchBar from "../components/SearchBar";
 
-function Landing() {
-  return (
+function Landing({handleSubmit}) {
+
+return (
     <section id="landing">
       <div className="container">
         <div className="row">
@@ -14,7 +15,7 @@ function Landing() {
               alt="picture of a movie actor and movie actress"
             />
           </figure>
-          <SearchBar />
+          <SearchBar handleSubmit={handleSubmit} />
         </div>
       </div>
     </section>

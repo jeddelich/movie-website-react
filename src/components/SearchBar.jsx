@@ -1,8 +1,12 @@
 import './SearchBar.css'
+import { useNavigate } from 'react-router-dom';
 
-function SearchBar() {
-  return (
-    <form id="search__form">
+function SearchBar( {handleSubmit} ) {
+
+const navigate = useNavigate()
+
+    return (
+    <form id="search__form" onSubmit={(event) => handleSubmit(event, navigate)}>
       <div className="search-bar--scale-wrapper">
         <input
           type="text"
