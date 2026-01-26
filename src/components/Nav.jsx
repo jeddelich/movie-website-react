@@ -3,34 +3,34 @@ import './Nav.css'
 function Nav() {
   return (
     <nav>
-      <div class="nav__side--left">
-        <div class="nav__title">Movies</div>
-        <div class="movies__icon--wrapper">
-          <i class="movies__icon fa-solid fa-film"></i>
+      <div className="nav__side--left">
+        <div className="nav__title">Movies</div>
+        <div className="movies__icon--wrapper">
+          <i className="movies__icon fa-solid fa-film"></i>
         </div>
       </div>
-      <div class="nav__side--right">
-        <ul class="nav__links">
-          <li class="nav__link nav__link--2">
+      <div className="nav__side--right">
+        <ul className="nav__links">
+          <li className="nav__link nav__link--2">
             <a
-              class="nav__link--anchor nav__link--anchor2"
-              onclick="window.location.reload();"
+              className="nav__link--anchor nav__link--anchor2"
+            //   onClick="window.location.reload();"
             >
               Go Home
             </a>
-            <div class="underline"></div>
+            <div className="underline"></div>
             <i
-              class="fa-solid fa-arrow-right-to-bracket"
-              onclick="window.location.reload();"
+              className="fa-solid fa-arrow-right-to-bracket"
+            //   onClick="window.location.reload();"
             ></i>
           </li>
-          <li class="nav__link nav__link--1">
-            <a class="nav__link--anchor">About</a>
-            <div class="underline"></div>
+          <li className="nav__link nav__link--1">
+            <a className="nav__link--anchor">About</a>
+            <div className="underline"></div>
           </li>
-          <li class="nav__link nav__link--1">
-            <a class="nav__link--anchor">Contact</a>
-            <div class="underline"></div>
+          <li className="nav__link nav__link--1">
+            <a className="nav__link--anchor">Contact</a>
+            <div className="underline"></div>
           </li>
         </ul>
       </div>
