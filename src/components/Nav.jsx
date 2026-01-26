@@ -1,13 +1,13 @@
 import './Nav.css'
+import Logo from "../assets/Logo.png"
 
 function Nav() {
   return (
     <nav>
       <div className="nav__side--left">
-        <div className="nav__title">Movies</div>
-        <div className="movies__icon--wrapper">
-          <i className="movies__icon fa-solid fa-film"></i>
-        </div>
+        <figure className="logo--wrapper">
+            <img src={Logo} alt="" className="logo" />
+        </figure>
       </div>
       <div className="nav__side--right">
         <ul className="nav__links">

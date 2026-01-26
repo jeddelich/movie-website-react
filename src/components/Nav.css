@@ -14,14 +14,24 @@ nav {
   align-items: center;
 }
 
-.nav__title {
+.logo--wrapper {
+  height: 60px;
+  width: auto;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+}
+
+/* .nav__title {
   font-size: 24px;
   color: #F4F4F7;
   transform: translateX(-2px);
   cursor: default;
-}
+} */
 
-.movies__icon--wrapper {
+/* .movies__icon--wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +42,7 @@ nav {
 .movies__icon {
   font-size: 24px;
   color: #c6b8b8;
-}
+} */
 
 .nav__title,
 .movies__icon,
