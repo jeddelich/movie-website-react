@@ -25,9 +25,15 @@ async function renderMovies(search) {
   // header.style.visibility = "hidden";
   // scrollBarFloatUp();
   // background.style.display = "none";
-  // navLinks[0].style.display = "none";
-  // navLinks[1].style.display = "none";
   // specify.innerHTML = ``
+
+  // Make into utils function? ChangeNavLinks?
+  const navLinks = document.querySelectorAll(".nav__link--1");   
+  navLinks[0].style.display = "none";
+  navLinks[1].style.display = "none";
+  const navLinkHome = document.querySelector(".nav__link--2");
+  navLinkHome.style.display = "flex";
+
 
   // try {
     const moviesPromise = await fetch(

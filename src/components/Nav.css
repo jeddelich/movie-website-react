@@ -81,9 +81,17 @@ nav {
   font-weight: 500;
 }
 
+.home__icon--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+
 .fa-arrow-right-to-bracket {
-  color: #c6b8b8;
-  margin-left: 8px;
+  color: #F4F4F7;
+  margin-top: 2px;
+  font-size: 20px;
 }
 
 .nav__link--1 {

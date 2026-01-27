@@ -16,13 +16,15 @@ function Nav() {
               className="nav__link--anchor nav__link--anchor2"
             //   onClick="window.location.reload();"
             >
-              Go Home
+              Return To Home Page
             </a>
             <div className="underline"></div>
+            <figure className='home__icon--wrapper'>
             <i
               className="fa-solid fa-arrow-right-to-bracket"
             //   onClick="window.location.reload();"
             ></i>
+            </figure>
           </li>
           <li className="nav__link nav__link--1">
             <a className="nav__link--anchor">About</a>
