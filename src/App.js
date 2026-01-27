@@ -5,15 +5,15 @@ import Landing from "./pages/Landing";
 import Movie from "./pages/Movie";
 import Nav from "./components/Nav";
 import SearchBar from "./components/SearchBar";
+import axios from "axios";
 
 function App() {
+
   function handleSubmit(event, navigate) {
     event.preventDefault();
 
     const searchBar = document.getElementById("search-bar");
     const search = searchBar.value;
-
-    console.log(search)
 
     navigate(`/${search}`);
 
@@ -31,11 +31,11 @@ function App() {
     // specify.innerHTML = ``
 
     // try {
-    const moviesPromise = await fetch(
+    const { data } = await axios.get(
       `https://www.omdbapi.com/?s=${search}&apikey=806b3177`,
     );
-    const moviesData = await moviesPromise.json();
-    const firstSix = moviesData.Search.splice(0, 6);
+    console.log(data)
+    const firstSix = data.Search.splice(0, 6);
 
     console.log(firstSix);
 
