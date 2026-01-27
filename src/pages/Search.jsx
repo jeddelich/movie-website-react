@@ -2,14 +2,14 @@ import Nav from "../components/Nav";
 import "./Search.css";
 import { useParams } from "react-router-dom";
 
-function Search() {
+function Search({handleSubmit}) {
   
 const {s} = useParams()
-console.log(s)  
+console.log(s) 
 
     return (
     <>
-      <Nav s={s}/>
+      <Nav s={s} handleSubmit={handleSubmit}/>
       <div className="movie__list"></div>
     </>
   );

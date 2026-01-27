@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-function Nav({ s }) {
+function Nav({ s, handleSubmit }) {
   const navigate = useNavigate();
 
   function originalLinks() {
@@ -21,7 +21,7 @@ function Nav({ s }) {
     <nav>
       {s && (
         <div className="search--placeholder">
-          <SearchBar s={s}/>
+          <SearchBar s={s} handleSubmit={handleSubmit}/>
         </div>
       )}
       <div className="nav__side--left">

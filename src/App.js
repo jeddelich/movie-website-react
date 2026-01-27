@@ -13,6 +13,8 @@ function App() {
     const searchBar = document.getElementById("search-bar");
     const search = searchBar.value;
 
+    console.log(search)
+
     navigate(`/${search}`);
 
     renderMovies(search);
@@ -109,7 +111,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing handleSubmit={handleSubmit} />} />
-        <Route path="/:s" element={<Search />} />
+        <Route path="/:s" element={<Search handleSubmit={handleSubmit} />} />
         <Route path="/:id" element={<Movie />} />
       </Routes>
     </Router>
