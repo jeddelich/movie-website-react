@@ -1,11 +1,12 @@
 import "./Nav.css";
 import Logo from "../assets/Logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
-function Nav() {
+function Nav({ s }) {
   const navigate = useNavigate();
 
-  function returnHome() {
+  function originalLinks() {
     navigate("/");
 
     // opposite of potential util function in app.js
@@ -18,6 +19,11 @@ function Nav() {
 
   return (
     <nav>
+      {s && (
+        <div className="search--placeholder">
+          <SearchBar/>
+        </div>
+      )}
       <div className="nav__side--left">
         <figure className="logo--wrapper">
           <img src={Logo} alt="" className="logo" />
@@ -28,7 +34,7 @@ function Nav() {
           <li className="nav__link nav__link--2">
             <a
               className="nav__link--anchor nav__link--anchor2"
-              onClick={returnHome}
+              onClick={originalLinks}
             >
               Return To Home Page
             </a>
