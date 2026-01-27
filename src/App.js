@@ -3,12 +3,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
 import Landing from "./pages/Landing";
 import Movie from "./pages/Movie";
-import Nav from "./components/Nav";
-import SearchBar from "./components/SearchBar";
 import axios from "axios";
 import Footer from "./components/Footer";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const STORAGE_KEY = "mySearchedMovies";
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      setMovies(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (movies.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(movies));
+    }
+  }, [movies]);
 
   function handleSubmit(event, navigate) {
     event.preventDefault();
@@ -16,7 +30,7 @@ function App() {
     const searchBar = document.getElementById("search-bar");
     const search = searchBar.value;
 
-    navigate(`/${search}`);
+    navigate(`/search/${search}`);
 
     renderMovies(search);
   }
@@ -35,19 +49,15 @@ function App() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?s=${search}&apikey=806b3177`,
     );
-    console.log(data)
-    const firstSix = data.Search.splice(0, 6);
-
-    console.log(firstSix);
+    console.log(data);
+    const firstSix = data.Search.slice(0, 6);
+    setMovies(firstSix);
 
     //   movieArray = [];
 
     //   calculateRuntimes(firstSix);
     //   reformatReleaseDates(firstSix);
 
-    setTimeout(() => {
-      moviesHTML(firstSix);
-    }, 1000);
   }
 
   // add movieArray to moviesHTML()
@@ -58,62 +68,12 @@ function App() {
   //   Please specify and try again! For continued support contact us.`
   // }
 
-  function moviesHTML(firstSix, movieArray) {
-    // spinner.classList.remove("loading");
-    // container.classList.remove("move-forward");
-    // movieList.style.opacity = 1;
-
-    
-      const navLinks = document.querySelectorAll(".nav__link--1");
-      navLinks[0].style.display = "none";
-      navLinks[1].style.display = "none";
-      const navLinkHome = document.querySelector(".nav__link--2");
-      navLinkHome.style.display = "flex";
-
-    const movieList = document.querySelector(".movie__list");
-    movieList.innerHTML = null;
-
-    // ${movieArray[i]} goes in movie__rated
-
-    for (let i = 0; i < firstSix.length; i++) {
-      if (firstSix[i].Poster === "N/A") {
-        movieList.innerHTML += `<div class="movie">
-                <div class="movie__poster--wrapper">
-                    <div class="movie__poster--unavailable">No Picture<br>In Database
-                        <i class="fa-solid fa-face-sad-cry"></i>
-                    </div>
-                </div>
-                <div class="movie__description">
-                    <div class="movie__title movie__title--${i}">${firstSix[i].Title}</div>
-                    <div class="movie__details">
-                        <div class="movie__year">${firstSix[i].Year}</div>
-                        <div class="movie__rated"></div>
-                    </div>
-                </div>
-            </div>`;
-      } else {
-        movieList.innerHTML += `<div class="movie">
-                <div class="movie__poster--wrapper">
-                    <img src="${firstSix[i].Poster}" class="movie__poster">
-                </div>
-                <div class="movie__description">
-                    <div class="movie__title movie__title--${i}">${firstSix[i].Title}</div>
-                    <div class="movie__details">
-                        <div class="movie__year">${firstSix[i].Year}</div>
-                        <div class="movie__rated"></div>
-                    </div>
-                </div>
-            </div>`;
-      }
-    }
-  }
-
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Landing handleSubmit={handleSubmit} />} />
-        <Route path="/:s" element={<Search handleSubmit={handleSubmit} />} />
-        <Route path="/:id" element={<Movie />} />
+        <Route path="search/:s" element={<Search handleSubmit={handleSubmit} movies={movies} />} />
+        <Route path="movie/:id" element={<Movie />} />
       </Routes>
       <Footer />
     </Router>
