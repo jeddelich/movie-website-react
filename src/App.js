@@ -6,6 +6,7 @@ import Movie from "./pages/Movie";
 import Nav from "./components/Nav";
 import SearchBar from "./components/SearchBar";
 import axios from "axios";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -114,6 +115,7 @@ function App() {
         <Route path="/:s" element={<Search handleSubmit={handleSubmit} />} />
         <Route path="/:id" element={<Movie />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

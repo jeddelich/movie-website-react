@@ -2,6 +2,7 @@ import "./Landing.css";
 import landing from "../assets/landing__img.svg";
 import SearchBar from "../components/SearchBar";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 function Landing({ handleSubmit }) {
   return (

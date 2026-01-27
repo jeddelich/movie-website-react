@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Search.css";
 import { useParams } from "react-router-dom";
