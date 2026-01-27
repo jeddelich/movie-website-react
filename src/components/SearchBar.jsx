@@ -8,17 +8,23 @@ const navigate = useNavigate()
 
 useEffect(() => {
     if (s) {
+        const searchBar = document.getElementById("search-bar")
+        const searchForm = document.getElementById("search__form")
+        const searchBarWrapper = document.querySelector(".search-bar--wrapper")
 
-        document.getElementById("search-bar").style.opacity=1;
-        document.getElementById("search-bar").style.width="40vw"
-        document.getElementById("search__form").style.width="100%"
-        document.getElementById("search__form").style.margin="0"
+        searchBar.style.width="40vw"
+        searchBar.setAttribute("placeholder", `${s}`)
+        searchBarWrapper.classList += " search-bar--wrapper2"
+        searchForm.style.animation = "fade-in 2s 1s ease forwards"
+        searchForm.style.transform = "translateX(0)"
+        searchForm.style.width="100%"
+        searchForm.style.margin="0"
     }
 }, [])
 
     return (
     <form id="search__form" onSubmit={(event) => handleSubmit(event, navigate)}>
-      <div className="search-bar--scale-wrapper">
+      <div className="search-bar--wrapper">
         <input
           type="text"
           id="search-bar"
