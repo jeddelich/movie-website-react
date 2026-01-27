@@ -1,5 +1,5 @@
 #search__form {
-  position: relative;
+position: relative;
   margin: 0 16px;
   width: 80%;
   transform: translateX(160px);
@@ -18,8 +18,8 @@
   }
 }
 
-#search-bar {
-  border: 2px solid #2a2a2e;
+#search-bar { 
+border: 2px solid #2a2a2e;
   opacity: 50%;
   height: 56px;
   width: 100%;

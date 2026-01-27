@@ -1,6 +1,6 @@
 import "./Nav.css";
 import Logo from "../assets/Logo.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 function Nav({ s }) {
@@ -21,7 +21,7 @@ function Nav({ s }) {
     <nav>
       {s && (
         <div className="search--placeholder">
-          <SearchBar/>
+          <SearchBar s={s}/>
         </div>
       )}
       <div className="nav__side--left">
