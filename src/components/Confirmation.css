@@ -1,0 +1,36 @@
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.confirmation__title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.confirmation__message {
+    margin: 0 24px;
+    text-align: center;
+}
+
+.confirmation--button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.about__icon--wrapper {
+    height: fit-content;
+    width: fit-content;   
+}
+
+.fa-arrow-left-long {
+    font-size: 32px;
+}

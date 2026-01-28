@@ -1,0 +1,28 @@
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 24px;
+}
+
+.modal__title {
+    font-weight: 800;
+}
+
+.modal__icon--wrapper {
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.fa-xmark {
+    font-size: 20px;
+}
+
+.modal__para {
+    margin: 0 24px;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
