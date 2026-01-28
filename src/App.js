@@ -46,12 +46,25 @@ function App() {
     // scrollBarFloatUp();
     // background.style.display = "none";
     // specify.innerHTML = ``
+    try {
+      const { data } = await axios.get(
+        `https://www.omdbapi.com/?s=${search}&apikey=806b3177`,
+      );
 
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?s=${search}&apikey=806b3177`,
-    );
-    const firstSix = data.Search.slice(0, 6);
-    setMovies(firstSix);
+      if (data.Response === "False") {
+        setMovies([])
+        setError(true)
+        return;
+      }
+      
+      const firstSix = data.Search.slice(0, 6);
+      setMovies(firstSix);
+      setError(false)
+    } catch (error) {
+      console.log(error)
+      setMovies([])
+      setError(true)
+    }
 
     //   movieArray = [];
 
@@ -77,6 +90,7 @@ function App() {
               setLoading={setLoading}
               renderMovies={renderMovies}
               error={error}
+              setError={setError}
             />
           }
         />

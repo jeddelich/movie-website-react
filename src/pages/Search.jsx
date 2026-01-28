@@ -6,17 +6,25 @@ import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import Catch from "../components/Catch";
 
-function Search({ handleSubmit, movies, setMovies, loading, setLoading, renderMovies, error }) {
+function Search({
+  handleSubmit,
+  movies,
+  setMovies,
+  loading,
+  setLoading,
+  renderMovies,
+  error,
+  setError,
+}) {
   const { s } = useParams();
 
-  
   useEffect(() => {
     if (!s) return;
 
-    console.log(s);
+    setError(false)
+    setMovies([])
+    setLoading(true);
     async function load() {
-      setLoading(true);
-      
       const minDelay = 2000; // 2 seconds
       const startTime = Date.now();
 
@@ -33,18 +41,22 @@ function Search({ handleSubmit, movies, setMovies, loading, setLoading, renderMo
         setLoading(false);
       }
     }
-    
+
     load();
   }, [s]);
-  
-  if (!s) {
-    return <Catch />
-  }
+
+  // if (!s || error) {
+  //   return <Catch />
+  // }
 
   return (
     <>
       {loading ? (
         <Loading />
+      ) : !s ? (
+        <Catch />
+      ) : error || movies.length === 0 ? (
+        <Catch />
       ) : (
         <div className="movie__list">
           {movies.map((movie, i) => (
