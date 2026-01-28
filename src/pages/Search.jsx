@@ -4,15 +4,19 @@ import Nav from "../components/Nav";
 import "./Search.css";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
+import Catch from "../components/Catch";
 
-function Search({ handleSubmit, movies, setMovies, loading, setLoading, renderMovies }) {
+function Search({ handleSubmit, movies, setMovies, loading, setLoading, renderMovies, error }) {
   const { s } = useParams();
 
+  
   useEffect(() => {
+    if (!s) return;
+
     console.log(s);
     async function load() {
       setLoading(true);
-
+      
       const minDelay = 2000; // 2 seconds
       const startTime = Date.now();
 
@@ -29,9 +33,13 @@ function Search({ handleSubmit, movies, setMovies, loading, setLoading, renderMo
         setLoading(false);
       }
     }
-
+    
     load();
   }, [s]);
+  
+  if (!s) {
+    return <Catch />
+  }
 
   return (
     <>

@@ -1,0 +1,17 @@
+#catch {
+    background-color: #F4F4F7;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catch__messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catch__message {
+    font-size: 24px;
+}

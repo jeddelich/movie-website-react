@@ -7,10 +7,12 @@ import axios from "axios";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
+import Catch from "./components/Catch";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const STORAGE_KEY = "mySearchedMovies";
 
   useEffect(() => {
@@ -33,7 +35,6 @@ function App() {
     const search = searchBar.value;
 
     navigate(`/search/${search}`);
-
   }
 
   async function renderMovies(search) {
@@ -46,7 +47,6 @@ function App() {
     // background.style.display = "none";
     // specify.innerHTML = ``
 
-    // try {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?s=${search}&apikey=806b3177`,
     );
@@ -61,19 +61,13 @@ function App() {
 
   // add movieArray to moviesHTML()
 
-  // catch {
-  //   spinner.classList.remove("loading");
-  //   specify.innerHTML = `The movie you're searching for can't be found.
-  //   Please specify and try again! For continued support contact us.`
-  // }
-
   return (
     <Router>
       <Nav handleSubmit={handleSubmit} />
       <Routes>
         <Route path="/" element={<Landing handleSubmit={handleSubmit} />} />
         <Route
-          path="search/:s"
+          path="search/:s?"
           element={
             <Search
               handleSubmit={handleSubmit}
@@ -82,6 +76,7 @@ function App() {
               loading={loading}
               setLoading={setLoading}
               renderMovies={renderMovies}
+              error={error}
             />
           }
         />
