@@ -1,5 +1,5 @@
 
-function Movie() {
+function Movie({detailedMovies}) {
   return (
     <div>Movie</div>
   )
