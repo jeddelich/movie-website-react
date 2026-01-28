@@ -5,26 +5,40 @@ import "./Search.css";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 
-function Search({ handleSubmit, movies, loading, setLoading, renderMovies }) {
+function Search({ handleSubmit, movies, setMovies, loading, setLoading, renderMovies }) {
   const { s } = useParams();
 
   useEffect(() => {
     console.log(s);
     async function load() {
       setLoading(true);
-      console.log("loading...")
-      await renderMovies(s)
-      setLoading(false)
+
+      const minDelay = 2000; // 2 seconds
+      const startTime = Date.now();
+
+      await renderMovies(s);
+
+      const elapsed = Date.now() - startTime;
+      const remainingTime = minDelay - elapsed;
+
+      if (remainingTime > 0) {
+        setTimeout(() => {
+          setLoading(false);
+        }, remainingTime);
+      } else {
+        setLoading(false);
+      }
     }
-    load()
+
+    load();
   }, [s]);
 
   return (
     <>
-        {loading ? (
-          <Loading />
-        ) : (
-          <div className="movie__list">
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="movie__list">
           {movies.map((movie, i) => (
             <div className="movie" key={movie.imdbID}>
               <div className="movie__poster--wrapper">
@@ -47,8 +61,8 @@ function Search({ handleSubmit, movies, loading, setLoading, renderMovies }) {
               </div>
             </div>
           ))}
-      </div>
-        )}
+        </div>
+      )}
     </>
   );
 }

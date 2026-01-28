@@ -11,6 +11,7 @@ function Landing({ handleSubmit }) {
         <div className="container">
           <div className="row">
             <figure className="landing__img--wrapper">
+              <div className="landing__welcome">Browse our collection of hundreds of award-winning movies!</div>
               <img
                 src={landing}
                 className="landing__img"

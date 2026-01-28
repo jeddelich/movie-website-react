@@ -78,6 +78,7 @@ function App() {
             <Search
               handleSubmit={handleSubmit}
               movies={movies}
+              setMovies={setMovies}
               loading={loading}
               setLoading={setLoading}
               renderMovies={renderMovies}

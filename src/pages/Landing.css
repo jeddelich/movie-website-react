@@ -15,12 +15,26 @@
     flex-direction: column;
     width: fit-content;
     align-items: center;
-    margin-bottom: 8vh;
+    margin-bottom: 4vh;
 }
 
 .landing__img--wrapper {
+    position: relative;
     height: 500px;
     width: 500px;
+}
+
+.landing__welcome {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 6%;
+    z-index: 100;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2A2A2E;
+    opacity: 0;
+    animation: fade-in 500ms 2500ms ease forwards;
 }
 
 .landing__img {
@@ -40,4 +54,13 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+@keyframes fade-in {
+  from  {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

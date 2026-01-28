@@ -60,8 +60,7 @@
 }
 
 .movie__title,
-.movie__year,
-.movie__rated {
+.movie__year {
   color: #2A2A2E;
   margin: 4px 0;
 }
@@ -69,6 +68,8 @@
 .movie__title {
   text-align: center;
   font-size: 32px;
+  font-weight: 500;
+  opacity: 80%;
 }
 
 .movie__details {
