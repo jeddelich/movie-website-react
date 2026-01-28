@@ -29,6 +29,10 @@
     display: flex;
     justify-content: flex-start;
     margin: 0 24px 16px 24px;
+    background: transparent;
+    border: none;
+    align-items: center;
+    cursor: pointer;
 }
 
 .about__icon--wrapper {

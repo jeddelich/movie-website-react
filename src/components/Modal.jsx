@@ -37,12 +37,12 @@ function Modal({
                 modalPara={modalPara}
                 modalClose={modalClose}
               />
-              <div className="about__modal--footer">
+              <button className="about__modal--footer" onClick={modalClose}>
                 <figure className="about__icon--wrapper">
                   <i className="fa-solid fa-arrow-left-long"></i>
                 </figure>
                 <h4>Start Your Search Here</h4>
-              </div>
+              </button>
             </>
           )}
         </div>
