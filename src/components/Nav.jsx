@@ -10,16 +10,24 @@ function Nav({ handleSubmit, s }) {
 
 const location = useLocation();
 const isSearchPage = location.pathname.startsWith("/search");
-const [modal, setModal] = useState(false)
+const [aboutModal, setAboutModal] = useState(false)
+const [contactModal, setContactModal] = useState(false)
 
-function handleModal() {
-  modal ? setModal(false) : setModal(true)
+function handleAboutModal() {
+  aboutModal ? setAboutModal(false) : setAboutModal(true)
+}
+
+function handleContactModal() {
+  contactModal ? setContactModal(false) : setContactModal(true)
 }
 
   return (
     <>
     { 
-    modal && <Modal />
+    aboutModal && <Modal />
+    }
+    { 
+    contactModal && <Modal />
     }
     <nav>
       <div className="nav__side--left">
@@ -53,11 +61,11 @@ function handleModal() {
           ) : (
             <>
               <li className="nav__link nav__link--1">
-                <a className="nav__link--anchor" onClick={handleModal}>About</a>
+                <a className="nav__link--anchor" onClick={handleAboutModal}>About</a>
                 <div className="underline"></div>
               </li>
               <li className="nav__link nav__link--1">
-                <a className="nav__link--anchor" onClick={handleModal}>Contact</a>
+                <a className="nav__link--anchor" onClick={handleContactModal}>Contact</a>
                 <div className="underline"></div>
               </li>
             </>
