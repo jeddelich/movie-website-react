@@ -55,7 +55,7 @@ nav {
 
 .underline {
   position: absolute;
-  background-color: #f4f1f1;
+  background-color: white;
   height: 2px;
   width: 0;
   right: 0;
@@ -69,7 +69,7 @@ nav {
 
 .nav__link:hover .nav__link--anchor,
 .nav__link:hover .fa-arrow-right-to-bracket {
-  color: #f4f1f1;
+  color: white;
 }
 
 .nav__link:hover .underline {
@@ -83,7 +83,7 @@ nav {
 
 .nav__link--anchor {
   text-decoration: none;
-  color: #F4F4F7;
+  color: white;
   font-size: 20px;
   font-weight: 500;
 }
@@ -98,7 +98,7 @@ nav {
 }
 
 .fa-arrow-right-to-bracket {
-  color: #F4F4F7;
+  color: white;
   margin-top: 2px;
   font-size: 20px;
 }
