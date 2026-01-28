@@ -14,13 +14,19 @@ const [aboutModal, setAboutModal] = useState(false)
 const [contactModal, setContactModal] = useState(false)
 
 function handleAboutModal() {
-  if (!contactModal) {
+  if (contactModal) {
+    setContactModal(false)
+    setAboutModal(true)
+  } else {
     aboutModal ? setAboutModal(false) : setAboutModal(true)
   }
 }
 
 function handleContactModal() {
-  if (!aboutModal) {
+  if (aboutModal) {
+    setAboutModal(false)
+    setContactModal(true)
+  } else {
     contactModal ? setContactModal(false) : setContactModal(true)
   }
 }
