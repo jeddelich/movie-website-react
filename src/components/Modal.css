@@ -1,9 +1,39 @@
+* {
+  color: #2A2A2E;  
+}
+
 .modal {
     position: absolute;
     border: 8px solid #D7B56D;
     border-radius: 28px;
     width: 28%;
-    height: 480px;
+    height: fit-content;
     right: 16px;
     top: 96px;
+}
+
+.module__container {
+    height: 100%;
+    width: 100%;
+}
+
+.modal__row {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__title {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+    font-weight: 800;
+}
+
+.modal__para {
+    margin: 0 24px;
+    font-size: 18px;
+    margin-bottom: 16px;
 }
