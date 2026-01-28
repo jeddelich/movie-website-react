@@ -1,0 +1,9 @@
+.modal {
+    position: absolute;
+    border: 8px solid #D7B56D;
+    border-radius: 28px;
+    width: 28%;
+    height: 480px;
+    right: 16px;
+    top: 96px;
+}

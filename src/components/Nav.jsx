@@ -2,14 +2,25 @@ import "./Nav.css";
 import Logo from "../assets/Logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import Modal from "./Modal";
+import { useState } from "react";
 
 function Nav({ handleSubmit, s }) {
   const navigate = useNavigate();
 
 const location = useLocation();
 const isSearchPage = location.pathname.startsWith("/search");
+const [modal, setModal] = useState(false)
+
+function handleModal() {
+  modal ? setModal(false) : setModal(true)
+}
 
   return (
+    <>
+    { 
+    modal && <Modal />
+    }
     <nav>
       <div className="nav__side--left">
         <figure className="logo--wrapper">
@@ -42,11 +53,11 @@ const isSearchPage = location.pathname.startsWith("/search");
           ) : (
             <>
               <li className="nav__link nav__link--1">
-                <a className="nav__link--anchor">About</a>
+                <a className="nav__link--anchor" onClick={handleModal}>About</a>
                 <div className="underline"></div>
               </li>
               <li className="nav__link nav__link--1">
-                <a className="nav__link--anchor">Contact</a>
+                <a className="nav__link--anchor" onClick={handleModal}>Contact</a>
                 <div className="underline"></div>
               </li>
             </>
@@ -54,6 +65,7 @@ const isSearchPage = location.pathname.startsWith("/search");
         </ul>
       </div>
     </nav>
+    </>
   );
 }
 

@@ -106,7 +106,7 @@ nav {
 .nav__link--1 {
   display: flex;
   align-items: center;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .nav__link--2 {
