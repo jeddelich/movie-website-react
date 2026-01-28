@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Modal from "./Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Nav({ handleSubmit, s }) {
   const navigate = useNavigate();
@@ -12,6 +12,11 @@ const location = useLocation();
 const isSearchPage = location.pathname.startsWith("/search");
 const [aboutModal, setAboutModal] = useState(false)
 const [contactModal, setContactModal] = useState(false)
+
+ useEffect(() => {
+  setAboutModal(false)
+  setContactModal(false)
+ }, [location.pathname])
 
 function handleAboutModal() {
   if (contactModal) {
