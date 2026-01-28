@@ -29,7 +29,7 @@ nav {
   height: 100%;
   width: auto;
   opacity: 0;
-  animation: fade-in 1s ease forwards;
+  animation: fade-in 500ms 500ms ease forwards;
 }
 
 @keyframes fade-in {
@@ -44,7 +44,8 @@ nav {
 .nav__links {
   list-style-type: none;
   display: flex;
-  animation: fade-in 1s ease forwards;  
+  opacity: 0;
+  animation: fade-in 500ms 500ms ease forwards;  
 }
 
 .nav__link {
