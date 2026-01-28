@@ -85,7 +85,7 @@
 }
 
 .search-bar__form--btn:active {
-  background-color: #6f1616;
+  background-color: #2A2A2E;
   transform: scale(0.9) translateY(-55%);
 }
 
