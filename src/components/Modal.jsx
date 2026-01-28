@@ -1,7 +1,13 @@
 import ContactForm from "./ContactForm";
 import "./Modal.css";
 
-function Modal({ modalTitle, modalPara, modalClose, contactModal }) {
+function Modal({
+  modalTitle,
+  modalPara,
+  modalClose,
+  contactModal,
+  aboutModal,
+}) {
   return (
     <div className="modal">
       <div className="module__container">
@@ -13,9 +19,15 @@ function Modal({ modalTitle, modalPara, modalClose, contactModal }) {
             </button>
           </div>
           <p className="modal__para">{modalPara}</p>
-          { 
-          contactModal && <ContactForm />
-          }
+          {contactModal && <ContactForm />}
+          {aboutModal && (
+            <div className="about__modal--footer">
+              <figure className="about__icon--wrapper">
+                <i className="fa-solid fa-arrow-left-long"></i>
+              </figure>
+              <h4>Start Your Search Here</h4>
+            </div>
+          )}
         </div>
       </div>
     </div>
