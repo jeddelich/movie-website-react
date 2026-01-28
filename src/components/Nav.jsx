@@ -28,7 +28,7 @@ function handleContactModal() {
             movies and TV shows, we guarantee you'll find all the info you need to pick your next hit movie!" />
     }
     { 
-    contactModal && <Modal />
+    contactModal && <Modal modalTitle="Can't Find Your Movie Anywhere?" modalPara="We do our best to keep our library updated, but we need your help! Please contact us and let us know what we're missing!"/>
     }
     <nav>
       <div className="nav__side--left">
