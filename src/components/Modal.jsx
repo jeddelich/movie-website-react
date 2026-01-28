@@ -1,6 +1,7 @@
+import ContactForm from "./ContactForm";
 import "./Modal.css";
 
-function Modal({ modalTitle, modalPara, modalClose }) {
+function Modal({ modalTitle, modalPara, modalClose, contactModal }) {
   return (
     <div className="modal">
       <div className="module__container">
@@ -12,6 +13,9 @@ function Modal({ modalTitle, modalPara, modalClose }) {
             </button>
           </div>
           <p className="modal__para">{modalPara}</p>
+          { 
+          contactModal && <ContactForm />
+          }
         </div>
       </div>
     </div>

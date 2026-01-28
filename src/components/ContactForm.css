@@ -1,0 +1,36 @@
+#contact__form {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 24px 16px 24px;
+}
+
+label {
+    font-weight: 600;
+    width: 100%;
+}
+
+input,
+textarea {
+    margin: 12px 0;
+    padding: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    width: 100%;
+}
+
+textarea {
+    height: 100px;
+}
+
+.contact__form--submit {
+    width: fit-content;
+    padding: 8px 16px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #E6534B;
+    color: #F4F4F7;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
