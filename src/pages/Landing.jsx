@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 function Landing({ handleSubmit }) {
   return (
     <>
-      <Nav />
       <section id="landing">
         <div className="container">
           <div className="row">

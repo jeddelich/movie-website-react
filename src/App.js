@@ -6,9 +6,11 @@ import Movie from "./pages/Movie";
 import axios from "axios";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
+import Nav from "./components/Nav";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
   const STORAGE_KEY = "mySearchedMovies";
 
   useEffect(() => {
@@ -27,12 +29,11 @@ function App() {
   function handleSubmit(event, navigate) {
     event.preventDefault();
 
-    const searchBar = document.getElementById("search-bar");
+    const searchBar = document.querySelector(".search-bar");
     const search = searchBar.value;
 
     navigate(`/search/${search}`);
 
-    renderMovies(search);
   }
 
   async function renderMovies(search) {
@@ -49,7 +50,6 @@ function App() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?s=${search}&apikey=806b3177`,
     );
-    console.log(data);
     const firstSix = data.Search.slice(0, 6);
     setMovies(firstSix);
 
@@ -57,7 +57,6 @@ function App() {
 
     //   calculateRuntimes(firstSix);
     //   reformatReleaseDates(firstSix);
-
   }
 
   // add movieArray to moviesHTML()
@@ -70,9 +69,21 @@ function App() {
 
   return (
     <Router>
+      <Nav handleSubmit={handleSubmit} />
       <Routes>
         <Route path="/" element={<Landing handleSubmit={handleSubmit} />} />
-        <Route path="search/:s" element={<Search handleSubmit={handleSubmit} movies={movies} />} />
+        <Route
+          path="search/:s"
+          element={
+            <Search
+              handleSubmit={handleSubmit}
+              movies={movies}
+              loading={loading}
+              setLoading={setLoading}
+              renderMovies={renderMovies}
+            />
+          }
+        />
         <Route path="movie/:id" element={<Movie />} />
       </Routes>
       <Footer />

@@ -15,6 +15,11 @@ nav {
   align-items: center;
 }
 
+.nav__side--right {
+  display: flex;
+  align-items: center;
+}
+
 .logo--wrapper {
   height: 60px;
   width: auto;
@@ -86,7 +91,9 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  width: fit-content;
+  margin-left: 8px;
+  margin-top: 2px;
 }
 
 .fa-arrow-right-to-bracket {
@@ -102,9 +109,10 @@ nav {
 }
 
 .nav__link--2 {
-  display: none;
   align-items: center;
   cursor: pointer;
+  display: flex;
+  position: relative;
 }
 
 .search--placeholder {
