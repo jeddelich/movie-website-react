@@ -20,7 +20,7 @@ const isSearchPage = location.pathname.startsWith("/search");
           type="text"
           className={`search-bar ${isSearchPage && "search-bar2"}`}
           autoComplete="off"
-          placeholder={`${isSearchPage ? `Search results for: ${resultsFor}` : 'Search movies...' }`}
+          placeholder={`${isSearchPage ? resultsFor : 'Search movies...' }`}
         />
         <button type="submit" className="search-bar__form--btn">
           Search

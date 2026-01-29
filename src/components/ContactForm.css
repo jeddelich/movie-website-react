@@ -59,7 +59,12 @@ label {
     font-size: 13px;
 }
 #contact__form {
-    margin: 12px 24px 16px 24px;
+    margin: 24px 24px 8px 24px;
     align-items: center;
+}
+#contact__form input,
+#contact__form textarea {
+    margin-top: 6px;
+    margin-bottom: 12px;
 }
 }

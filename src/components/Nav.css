@@ -2,7 +2,7 @@ nav {
   position: relative;
   width: 100%;
   height: 80px;
-  background-color: #E6534B;
+  background-color: #e6534b;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +34,7 @@ nav {
 }
 
 @keyframes fade-in {
-  from  {
+  from {
     opacity: 0;
   }
   to {
@@ -46,7 +46,7 @@ nav {
   list-style-type: none;
   display: flex;
   opacity: 0;
-  animation: fade-in 500ms 500ms ease forwards;  
+  animation: fade-in 500ms 500ms ease forwards;
 }
 
 .nav__link {
@@ -118,33 +118,43 @@ nav {
 }
 
 .search--placeholder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: 16px;
+}
+
+@media (max-width: 1024px) {
+  .nav__link--anchor2 {
+    display: none;
+  }
+  .home__icon--wrapper {
+  margin: 0;
+}
 }
 
 @media (max-width: 768px) {
   .nav__link--anchor {
-  font-size: 18px;
-}
+    font-size: 18px;
+  }
 
-.logo--wrapper {
-  height: 48px;
-}
+  .logo--wrapper {
+    height: 48px;
+  }
 
-nav {
-  padding-right: 30px;
-  padding-left: 16px;
-}
+  nav {
+    padding-right: 30px;
+    padding-left: 16px;
+  }
 
-.nav__link {
-  margin-left: 24px;
-}
+  .nav__link {
+    margin-left: 24px;
+  }
+
+  .search-nav__side--left {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
-  .nav__links {
+  .nav__link--1 {
     display: none;
   }
 }

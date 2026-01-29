@@ -73,6 +73,16 @@
 
 .landing__welcome{
     font-size: 20px;
+    transform: translateY(-24%);
+}
+
+.landing__welcome,
+.landing__img {
+    animation: fade-in 1s 1s ease forwards;
+}
+
+.landing__img {
+    transform: none;
 }
 
 }
