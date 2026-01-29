@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Search.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import Catch from "../components/Catch";
 
@@ -17,6 +17,7 @@ function Search({
   setError,
 }) {
   const { s } = useParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!s) return;
@@ -69,7 +70,7 @@ function Search({
                     In Database
                   </div>
                 ) : (
-                  <img src={movie.Poster} className="movie__poster" />
+                  <img src={movie.Poster} className="movie__poster" onClick={() => navigate(`/movie/${movie.imdbID}`)} />
                 )}
               </div>
 
