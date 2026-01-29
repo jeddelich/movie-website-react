@@ -93,12 +93,12 @@ function Nav({
             {isSearchPage || isMoviePage ? (
               <li className="nav__link nav__link--2">
                 {
-                  isMoviePage ?        <a
+                  isMoviePage ?      <div className="movie-nav__link--anchor2">  <a
                   className="nav__link--anchor nav__link--anchor2"
                   onClick={() => navigate("/")}
                 >
                   Return To Home Page
-                </a> : <div className="search-nav__link--anchor2"> <a
+                </a></div> : <div className="search-nav__link--anchor2"> <a
                   className="nav__link--anchor nav__link--anchor2"
                   onClick={() => navigate("/")}
                 >

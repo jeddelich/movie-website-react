@@ -139,3 +139,33 @@
 }
 
 }
+
+@media (max-width: 768px) {
+    .movie__row{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #movie{
+        height: auto;
+    }
+
+    .movie__info{
+        align-items: center;
+        width: 50%;
+        margin-bottom: 48px;
+    }
+
+    .movie__subtitle{
+        min-width: 248px;
+    }
+
+    .movie__plot{
+        text-align: center;
+        min-width: 240px;
+    }
+
+    .movie__genre{
+        text-align: center;
+    }
+}

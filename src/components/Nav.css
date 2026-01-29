@@ -140,12 +140,16 @@ nav {
     font-size: 18px;
   }
 
+.fa-arrow-right-to-bracket{
+  font-size: 16px;
+}
+
   .logo--wrapper {
     height: 48px;
   }
 
   nav {
-    padding-right: 30px;
+    padding-right: 24px;
     padding-left: 16px;
   }
 
@@ -155,6 +159,10 @@ nav {
 
   .search-nav__side--left {
     display: none;
+  }
+
+  .movie-nav__link--anchor2 .nav__link--anchor2 {
+    font-size: 16px;
   }
 }
 
