@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import MovieCard from "../components/MovieCard";
+import MovieLoading from "../components/MovieLoading";
 
 function Movie() {
   const { i } = useParams();
@@ -51,7 +52,7 @@ function Movie() {
   }, [movie]);
 
   if (!movie) {
-    return <div>Loading movie...</div>;
+    return <MovieLoading />
   }
 
   return (

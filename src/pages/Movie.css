@@ -2,6 +2,11 @@
   height: calc(100vh - 80px);
 }
 
+.movie__loading{
+    height: calc(100ch - 80px);
+    background-color: #f4f4f7;
+}
+
 .movie__img--wrapper .movie{
     width: fit-content;
     height: auto;

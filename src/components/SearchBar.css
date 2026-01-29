@@ -100,3 +100,25 @@
 .search-bar--wrapper2:hover .search-bar__form--btn {
   right: -4px;
 }
+
+@media (max-width: 768px) {
+  .search__form {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.search-bar__form--btn {
+  padding: 9px 24px;
+  border-radius: 60px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+}

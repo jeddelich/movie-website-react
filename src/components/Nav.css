@@ -6,7 +6,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 36px;
+  padding-right: 36px;
+  padding-left: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -121,4 +122,29 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .nav__link--anchor {
+  font-size: 18px;
+}
+
+.logo--wrapper {
+  height: 48px;
+}
+
+nav {
+  padding-right: 30px;
+  padding-left: 16px;
+}
+
+.nav__link {
+  margin-left: 24px;
+}
+}
+
+@media (max-width: 480px) {
+  .nav__links {
+    display: none;
+  }
 }

@@ -1,0 +1,18 @@
+#movie__loading {
+    height: calc(100vh - 80px);
+}
+
+#movie__loading .movie__poster--unavailable{
+    color: transparent;
+    cursor: default;
+}
+
+#movie__loading .movie__poster--wrapper:hover{
+    transform: none;
+}
+
+/* #movie__loading .movie__poster--unavailable{
+    background-color: rgba(42, 42, 46, 0.25);
+    width: 100px;
+    height: 40px
+} */
