@@ -2,6 +2,7 @@ import "./Movie.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import MovieCard from "../components/MovieCard";
 
 function Movie() {
   const { i } = useParams();
@@ -21,6 +22,10 @@ function Movie() {
       const hours = Math.floor(movieDataNumbers / 60);
       const minutes = movieDataNumbers % 60;
       const time = hours + " hr " + minutes + " mins";
+      console.log(time)
+      return time;
+    } else if (movieDataNumbers === "N/A") {
+      const time = movieDataNumbers
       console.log(time)
       return time;
     } else {
@@ -54,15 +59,7 @@ function Movie() {
       <div className="movie__container">
         <div className="movie__row">
           <figure className="movie__img--wrapper">
-            {
-              movie.Poster === "N/A" ? <div className="movie__unavailable--movie">Picture
-                    <br />
-                    Currently
-                    <br />
-                    Unvailable
-                  </div> :
-            <img className="movie__poster--img" src={movie.Poster} alt="" />
-            }
+            <MovieCard movie={movie} posterOnly/>
           </figure>
           <div className="movie__info">
             <h1 className="movie__title--movie">{movie.Title}</h1>

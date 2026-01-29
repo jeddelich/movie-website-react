@@ -5,6 +5,7 @@ import "./Search.css";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import Catch from "../components/Catch";
+import MovieCard from "../components/MovieCard";
 
 function Search({
   handleSubmit,
@@ -60,29 +61,8 @@ function Search({
         <Catch />
       ) : (
         <div className="movie__list">
-          {movies.map((movie, i) => (
-            <div className="movie" key={movie.imdbID}>
-              <div className="movie__poster--wrapper">
-                {movie.Poster === "N/A" ? (
-                  <div className="movie__poster--unavailable"  onClick={() => navigate(`/movie/${movie.imdbID}`)}>
-                    Picture
-                    <br />
-                    Currently
-                    <br />
-                    Unvailable
-                  </div>
-                ) : (
-                  <img src={movie.Poster} className="movie__poster" onClick={() => navigate(`/movie/${movie.imdbID}`)} />
-                )}
-              </div>
-
-              <div className="movie__description">
-                <div className="movie__title">{movie.Title}</div>
-                <div className="movie__details">
-                  <div className="movie__year">{movie.Year}</div>
-                </div>
-              </div>
-            </div>
+          {movies.map((movie) => (
+            <MovieCard movie={movie} key={movie.imdbID} />
           ))}
         </div>
       )}
