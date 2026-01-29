@@ -61,20 +61,6 @@ function App() {
       const firstSix = data.Search.slice(0, 6);
       setMovies(firstSix);
 
-      async function moreData(firstSix) {
-        const requests = firstSix.map((movie) => 
-          axios.get(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=806b3177`)
-        )
-
-        const responses = await Promise.all(requests);
-
-        const moviesWithDetails = responses.map(response => response.data)
-
-        setDetailedMovies(moviesWithDetails)
-      }
-
-      moreData(firstSix)
-
       setError(false)
     } catch (error) {
       console.log(error)
@@ -110,7 +96,7 @@ function App() {
             />
           }
         />
-        <Route path="movie/:i" element={<Movie detailedMovies={detailedMovies}/>} />
+        <Route path="movie/:i" element={<Movie />} />
       </Routes>
       <Footer />
     </Router>
