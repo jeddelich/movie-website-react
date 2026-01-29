@@ -54,14 +54,22 @@ function Movie() {
       <div className="movie__container">
         <div className="movie__row">
           <figure className="movie__img--wrapper">
+            {
+              movie.Poster === "N/A" ? <div className="movie__unavailable--movie">Picture
+                    <br />
+                    Currently
+                    <br />
+                    Unvailable
+                  </div> :
             <img className="movie__poster--img" src={movie.Poster} alt="" />
+            }
           </figure>
           <div className="movie__info">
             <h1 className="movie__title--movie">{movie.Title}</h1>
             <div className="movie__subtitle">
-              <div className="movie__rated">Rated: {movie.Rated}</div>
+              <div className="movie__rated"><span className="bold">Rated:</span> {movie.Rated}</div>
               <div className="movie__runtime">
-                Length: {formatRuntime(movie.Runtime)}
+                <span className="bold">Length:</span> {formatRuntime(movie.Runtime)}
               </div>
             </div>
             <p className="movie__plot">{movie.Plot}</p>

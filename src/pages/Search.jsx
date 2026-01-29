@@ -64,10 +64,12 @@ function Search({
             <div className="movie" key={movie.imdbID}>
               <div className="movie__poster--wrapper">
                 {movie.Poster === "N/A" ? (
-                  <div className="movie__poster--unavailable">
-                    No Picture
+                  <div className="movie__poster--unavailable"  onClick={() => navigate(`/movie/${movie.imdbID}`)}>
+                    Picture
                     <br />
-                    In Database
+                    Currently
+                    <br />
+                    Unvailable
                   </div>
                 ) : (
                   <img src={movie.Poster} className="movie__poster" onClick={() => navigate(`/movie/${movie.imdbID}`)} />

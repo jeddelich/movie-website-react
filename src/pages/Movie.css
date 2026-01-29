@@ -31,6 +31,22 @@
   box-shadow: #8e8e8e 0 0 4px;
 }
 
+.movie__unavailable--movie {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border-radius: 4px;
+  background-color: rgba(42, 42, 46, 0.25);
+  box-shadow: #8e8e8e 0 0 4px;
+  text-align: center;
+  color: #f4f4f2;
+  font-weight: 400;
+  font-size: 2cqw;
+  padding: 40% 16px;
+  white-space: nowrap;
+  align-items: center;
+}
+
 .movie__title--movie {
   font-size: 40px;
   margin-bottom: 20px;
@@ -51,7 +67,6 @@
 .movie__subtitle {
   display: flex;
   font-size: 18px;
-  font-style: italic;
 }
 
 .movie__plot {
@@ -76,4 +91,8 @@
 
 .fa-align-left {
   margin-left: 8px;
+}
+
+.bold{
+    font-weight: 600;
 }
