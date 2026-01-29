@@ -122,7 +122,12 @@ nav {
 }
 
 @media (max-width: 1024px) {
+  
   .nav__link--anchor2 {
+    margin-right: 8px;
+  }
+
+  .search-nav__link--anchor2 .nav__link--anchor2 {
     display: none;
   }
   .home__icon--wrapper {

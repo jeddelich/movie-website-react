@@ -92,12 +92,20 @@ function Nav({
           <ul className="nav__links">
             {isSearchPage || isMoviePage ? (
               <li className="nav__link nav__link--2">
-                <a
+                {
+                  isMoviePage ?        <a
                   className="nav__link--anchor nav__link--anchor2"
                   onClick={() => navigate("/")}
                 >
                   Return To Home Page
-                </a>
+                </a> : <div className="search-nav__link--anchor2"> <a
+                  className="nav__link--anchor nav__link--anchor2"
+                  onClick={() => navigate("/")}
+                >
+                  Return To Home Page
+                </a></div>
+                }
+         
                 <div className="underline"></div>
                 <a onClick={() => navigate("/")}>
                   <figure className="home__icon--wrapper">
