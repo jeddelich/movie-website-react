@@ -26,7 +26,7 @@ function Search({
     setMovies([])
     setLoading(true);
     async function load() {
-      const minDelay = 2000; // 2 seconds
+      const minDelay = 1000; // 2 seconds
       const startTime = Date.now();
 
       await renderMovies(s);

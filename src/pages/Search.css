@@ -55,6 +55,7 @@
 .movie__description {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: fit-content;
   margin-top: 16px;
 }
@@ -69,6 +70,7 @@
   text-align: center;
   font-size: 32px;
   font-weight: 500;
+  width: 80%;
   opacity: 80%;
 }
 
@@ -79,5 +81,5 @@
 }
 
 .movie__year {
-  font-size: 20px;
+  font-size: 24px;
 }
