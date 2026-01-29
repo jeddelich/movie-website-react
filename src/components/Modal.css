@@ -6,10 +6,11 @@
     position: absolute;
     border: 8px solid #D7B56D;
     border-radius: 28px;
-    width: 28%;
     height: fit-content;
-    right: 16px;
-    top: 96px;
+    width: 474px;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
 }
 
 .module__container {
@@ -49,4 +50,31 @@ h4 {
     font-weight: 400;
     font-style: italic;
     margin-left: 16px;
+}
+
+@media (max-width: 768px) {
+    .modal {
+    width: 400px;
+}
+}
+
+@media (max-width: 480px) {
+    .modal {
+    width: 280px;
+}
+.modal__about .fa-arrow-left-long {
+    font-size: 24px;
+}
+h4 {
+    font-size: 16px;
+}
+}
+
+@media (max-width: 480px) {
+    .modal{
+        top: 50%;
+    }
+    .modal__contact .modal {
+        width: 288px;
+    }
 }

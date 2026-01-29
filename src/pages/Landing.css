@@ -86,4 +86,8 @@
   .landing__welcome{
     font-size: 16px;
 }
+
+#landing{
+    height: calc(100vh - 160px);
+}
 }

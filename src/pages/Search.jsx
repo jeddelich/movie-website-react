@@ -15,7 +15,7 @@ function Search({
   setLoading,
   renderMovies,
   error,
-  setError,
+  setError
 }) {
   const { s } = useParams();
   const navigate = useNavigate()

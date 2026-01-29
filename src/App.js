@@ -13,7 +13,9 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [detailedMovies, setDetailedMovies] = useState([])
+  const [aboutModal, setAboutModal] = useState(false);
+  const [contactModal, setContactModal] = useState(false);
+  const [detailedMovies, setDetailedMovies] = useState([]);
   const STORAGE_KEY = "mySearchedMovies";
 
   useEffect(() => {
@@ -53,19 +55,19 @@ function App() {
       );
 
       if (data.Response === "False") {
-        setMovies([])
-        setError(true)
+        setMovies([]);
+        setError(true);
         return;
       }
-      
+
       const firstSix = data.Search.slice(0, 6);
       setMovies(firstSix);
 
-      setError(false)
+      setError(false);
     } catch (error) {
-      console.log(error)
-      setMovies([])
-      setError(true)
+      console.log(error);
+      setMovies([]);
+      setError(true);
     }
 
     //   movieArray = [];
@@ -78,9 +80,26 @@ function App() {
 
   return (
     <Router>
-      <Nav handleSubmit={handleSubmit} />
+      <Nav
+        handleSubmit={handleSubmit}
+        aboutModal={aboutModal}
+        setAboutModal={setAboutModal}
+        contactModal={contactModal}
+        setContactModal={setContactModal}
+      />
       <Routes>
-        <Route path="/" element={<Landing handleSubmit={handleSubmit} />} />
+        <Route
+          path="/"
+          element={
+            <Landing
+              handleSubmit={handleSubmit}
+              aboutModal={aboutModal}
+              setAboutModal={setAboutModal}
+              contactModal={contactModal}
+              setContactModal={setContactModal}
+            />
+          }
+        />
         <Route
           path="search/:s?"
           element={
