@@ -15,8 +15,8 @@ function Modal({
 
   return (
     <div className="modal">
-      <div className="module__container">
-        <div className="module__row">
+      <div className="modal__container">
+        <div className="modal__row">
           {contactModal &&
             (!submit ? (
               <>

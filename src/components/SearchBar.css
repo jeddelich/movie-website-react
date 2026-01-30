@@ -102,6 +102,10 @@
   right: -0.1%;
 }
 
+.search-bar--wrapper2 .search-bar__form--btn {
+  padding: 8px 16px;
+}
+
 @media (max-width: 1024px) {
   .search-bar--wrapper2 {
     width: 48vw;

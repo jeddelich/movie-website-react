@@ -1,5 +1,6 @@
 #movie {
   height: calc(100vh - 80px);
+  margin: 40px 0;
 }
 
 .movie__loading {
