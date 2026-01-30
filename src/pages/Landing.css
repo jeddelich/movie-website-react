@@ -94,7 +94,7 @@
   }
 
   .landing__welcome{
-    font-size: 16px;
+    display: none;
 }
 
 #landing{

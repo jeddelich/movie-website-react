@@ -15,6 +15,7 @@ function App() {
   const [error, setError] = useState(false);
   const [aboutModal, setAboutModal] = useState(false);
   const [contactModal, setContactModal] = useState(false);
+  const [menuStatus, setMenuStatus] = useState(false);
   const [detailedMovies, setDetailedMovies] = useState([]);
   const STORAGE_KEY = "mySearchedMovies";
 
@@ -86,6 +87,7 @@ function App() {
         setAboutModal={setAboutModal}
         contactModal={contactModal}
         setContactModal={setContactModal}
+        setMenuStatus={setMenuStatus}
       />
       <Routes>
         <Route
@@ -97,6 +99,8 @@ function App() {
               setAboutModal={setAboutModal}
               contactModal={contactModal}
               setContactModal={setContactModal}
+              menuStatus={menuStatus}
+              setMenuStatus={setMenuStatus}
             />
           }
         />

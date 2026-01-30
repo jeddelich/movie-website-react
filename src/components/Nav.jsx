@@ -12,6 +12,7 @@ function Nav({
   setAboutModal,
   contactModal,
   setContactModal,
+  setMenuStatus
 }) {
   const navigate = useNavigate();
 
@@ -40,6 +41,15 @@ function Nav({
     } else {
       contactModal ? setContactModal(false) : setContactModal(true);
     }
+  }
+
+  function openMenu() {
+    if (aboutModal) {
+      setAboutModal(false)
+    } else if (contactModal) {
+      setContactModal(false)
+    }
+    setMenuStatus(true)
   }
 
   return (
@@ -138,7 +148,7 @@ function Nav({
                   </a>
                   <div className="underline"></div>
                 </li>
-                <button className="menu__icon--wrapper">
+                <button className="menu__icon--wrapper" onClick={openMenu}>
                   <i className="fa-solid fa-bars"></i>
                 </button>
               </>

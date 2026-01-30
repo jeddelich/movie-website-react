@@ -3,6 +3,7 @@ import landing from "../assets/landing__img.svg";
 import SearchBar from "../components/SearchBar";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 
 function Landing({
   handleSubmit,
@@ -10,11 +11,16 @@ function Landing({
   setAboutModal,
   contactModal,
   setContactModal,
+  menuStatus,
+  setMenuStatus
 }) {
   return (
     <>
       <section id="landing">
         <div className="container">
+          {
+          menuStatus && <Menu setMenuStatus={setMenuStatus} setAboutModal={setAboutModal} setContactModal={setContactModal}/>
+          }
           {!contactModal && !aboutModal && (
             <div className="row">
               <figure className="landing__img--wrapper">
