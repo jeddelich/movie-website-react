@@ -43,6 +43,12 @@ function Search({
     load();
   }, [s]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  renderMovies();
+}, []);
+
+
   // if (!s || error) {
   //   return <Catch />
   // }
