@@ -42,14 +42,12 @@ function Movie() {
         `https://www.omdbapi.com/?i=${i}&apikey=806b3177`,
       );
 
-      setMovie(data);
+      setTimeout(() => {
+        setMovie(data);
+      }, 1000)
     }
     moreData();
   }, [i]);
-
-  useEffect(() => {
-    console.log(movie);
-  }, [movie]);
 
   if (!movie) {
     return <MovieLoading />

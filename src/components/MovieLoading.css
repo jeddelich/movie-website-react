@@ -11,8 +11,34 @@
     transform: none;
 }
 
-/* #movie__loading .movie__poster--unavailable{
-    background-color: rgba(42, 42, 46, 0.25);
-    width: 100px;
-    height: 40px
-} */
+ .fa-spinner {
+  position: absolute;
+  color: #2A2A2E;
+  font-size: 48px;
+  left: 48%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 800ms linear infinite;
+  z-index: -1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+    .fa-spinner{
+        left: 46%;
+    }
+}
+
+@media (max-width: 480px) {
+    .fa-spinner{
+        left: 44%;
+    }
+}
