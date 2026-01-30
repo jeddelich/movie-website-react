@@ -170,4 +170,8 @@ nav {
   .nav__link--1 {
     display: none;
   }
+
+    .movie-nav__link--anchor2 .nav__link--anchor2 {
+    display: none;
+  }
 }

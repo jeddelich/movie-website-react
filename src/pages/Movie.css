@@ -146,6 +146,12 @@
         gap: 0;
     }
 
+.movie__title--movie {
+  text-align: center;
+  font-size: 28px;
+  width: 280px;
+}
+
     #movie{
         height: auto;
     }
@@ -157,7 +163,8 @@
     }
 
     .movie__subtitle{
-        min-width: 248px;
+        min-width: 280px;
+        justify-content: center;
     }
 
     .movie__plot{
@@ -168,4 +175,15 @@
     .movie__genre{
         text-align: center;
     }
+}
+
+@media (max-width: 480px) {
+.movie__button--back {
+  font-size: 12px;
+  min-width: 160px;
+}
+.movie__title--movie {
+  font-size: 24px;
+  width: 240px;
+}
 }
