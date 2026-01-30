@@ -13,7 +13,6 @@ function Landing({
   setMenuStatus
 }) {
   return (
-    <>
       <section id="landing">
         <div className="container">
           {
@@ -36,7 +35,6 @@ function Landing({
           )}
         </div>
       </section>
-    </>
   );
 }
 

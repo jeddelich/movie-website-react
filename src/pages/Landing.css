@@ -15,7 +15,7 @@
     flex-direction: column;
     width: fit-content;
     align-items: center;
-    margin-bottom: 4vh;
+    padding: 40px 0;
 }
 
 .landing__img--wrapper {

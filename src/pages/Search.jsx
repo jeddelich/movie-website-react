@@ -41,7 +41,7 @@ function Search({
     }
 
     load();
-  }, [s, setError, setMovies, setLoading, renderMovies]);
+  }, [s]);
 
   // if (!s || error) {
   //   return <Catch />

@@ -11,6 +11,13 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+nav button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+}
+
 .nav__side--left {
   display: flex;
   align-items: center;
@@ -102,7 +109,7 @@ nav {
 
 .fa-arrow-right-to-bracket {
   color: white;
-  margin-top: 2px;
+  margin-bottom: 2px;
   font-size: 20px;
 }
 
