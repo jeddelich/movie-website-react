@@ -64,7 +64,8 @@ nav {
   transition: all 300ms ease;
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.menu__icon--wrapper:hover {
   transform: scale(1.05);
 }
 
@@ -78,7 +79,8 @@ nav {
   left: 0;
 }
 
-.nav__link:active {
+.nav__link:active,
+.menu__icon--wrapper:active {
   transform: scale(0.95);
 }
 
@@ -102,6 +104,22 @@ nav {
   color: white;
   margin-top: 2px;
   font-size: 20px;
+}
+
+.menu__icon--wrapper {
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 20px;
+  margin-top: 2px;
 }
 
 .nav__link--1 {
@@ -173,5 +191,8 @@ nav {
 
     .movie-nav__link--anchor2 .nav__link--anchor2 {
     display: none;
+  }
+  .menu__icon--wrapper{
+      display: flex;
   }
 }
