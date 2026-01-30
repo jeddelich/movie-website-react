@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import "./Search.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import Catch from "../components/Catch";
 import MovieCard from "../components/MovieCard";
 
 function Search({
-  handleSubmit,
   movies,
   setMovies,
   loading,
@@ -18,7 +15,6 @@ function Search({
   setError
 }) {
   const { s } = useParams();
-  const navigate = useNavigate()
 
   useEffect(() => {
     if (!s) return;
@@ -45,7 +41,7 @@ function Search({
     }
 
     load();
-  }, [s]);
+  }, [s, setError, setMovies, setLoading]);
 
   // if (!s || error) {
   //   return <Catch />

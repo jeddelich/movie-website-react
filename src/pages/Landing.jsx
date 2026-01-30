@@ -1,8 +1,6 @@
 import "./Landing.css";
 import landing from "../assets/landing__img.svg";
 import SearchBar from "../components/SearchBar";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 
 function Landing({
@@ -30,7 +28,7 @@ function Landing({
                 <img
                   src={landing}
                   className="landing__img"
-                  alt="picture of a movie actor and movie actress"
+                  alt="a movie actor and movie actress"
                 />
               </figure>
               <SearchBar handleSubmit={handleSubmit} />

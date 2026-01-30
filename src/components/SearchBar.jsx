@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './SearchBar.css'
 import { useLocation, useNavigate} from 'react-router-dom';
 

@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Modal from "./Modal";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function Nav({
   handleSubmit,
@@ -23,7 +23,7 @@ function Nav({
   useEffect(() => {
     setAboutModal(false);
     setContactModal(false);
-  }, [location.pathname]);
+  }, [location.pathname, setAboutModal, setContactModal]);
 
   function handleAboutModal() {
     if (contactModal) {
@@ -106,6 +106,7 @@ function Nav({
                   <div className="movie-nav__link--anchor2">
                     {" "}
                     <a
+                      href="#"
                       className="nav__link--anchor nav__link--anchor2"
                       onClick={() => navigate("/")}
                     >
@@ -116,6 +117,7 @@ function Nav({
                   <div className="search-nav__link--anchor2">
                     {" "}
                     <a
+                      href="#"
                       className="nav__link--anchor nav__link--anchor2"
                       onClick={() => navigate("/")}
                     >
@@ -127,7 +129,7 @@ function Nav({
                 <div className="underline"></div>
                 {isSearchPage ? (
                   <div className="search-home__icon--wrapper">
-                    <a onClick={() => navigate("/")}>
+                    <a onClick={() => navigate("/")} href="#">
                       <figure className="home__icon--wrapper">
                         <i
                           className="fa-solid fa-arrow-right-to-bracket"
@@ -137,7 +139,7 @@ function Nav({
                     </a>
                   </div>
                 ) : (
-                  <a onClick={() => navigate("/")}>
+                  <a onClick={() => navigate("/")} href="#">
                     <figure className="home__icon--wrapper">
                       <i
                         className="fa-solid fa-arrow-right-to-bracket"
@@ -150,13 +152,13 @@ function Nav({
             ) : (
               <>
                 <li className="nav__link nav__link--1">
-                  <a className="nav__link--anchor" onClick={handleAboutModal}>
+                  <a className="nav__link--anchor" href="#" onClick={handleAboutModal}>
                     About
                   </a>
                   <div className="underline"></div>
                 </li>
                 <li className="nav__link nav__link--1">
-                  <a className="nav__link--anchor" onClick={handleContactModal}>
+                  <a className="nav__link--anchor" href="#" onClick={handleContactModal}>
                     Contact
                   </a>
                   <div className="underline"></div>

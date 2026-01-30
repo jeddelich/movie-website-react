@@ -7,7 +7,6 @@ import axios from "axios";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import Catch from "./components/Catch";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -16,7 +15,6 @@ function App() {
   const [aboutModal, setAboutModal] = useState(false);
   const [contactModal, setContactModal] = useState(false);
   const [menuStatus, setMenuStatus] = useState(false);
-  const [detailedMovies, setDetailedMovies] = useState([]);
   const STORAGE_KEY = "mySearchedMovies";
 
   useEffect(() => {
