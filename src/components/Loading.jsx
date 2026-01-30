@@ -6,7 +6,7 @@ function Loading() {
   return (
     <section id="loading">
       {skeletonArray.map((skeleton, i) => (
-        <div className="movie" key={i}>
+        <div className="loading__movie" key={i}>
           <div className="skeleton--wrapper">
             <div className="skeleton__poster">
             </div>

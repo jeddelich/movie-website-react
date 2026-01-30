@@ -1,17 +1,19 @@
 #loading {
-    height: calc(180vh - 80px);
+    height: fit-content;
     background-color: #F4F4F7;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 40px 0;
 }
 
-.movie {
+.loading__movie {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: calc(100% / 3);
+  height: fit-content;
   margin: 48px 0;
 }
 
@@ -19,13 +21,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 400px;
+  width: 50%;
+  height: fit-content;
 }
 
 .skeleton__poster {
   aspect-ratio: 2/3;
-  height: 100%;
+  width: 100%;
   background-color: #8e8e8e;
 }
 
@@ -64,19 +66,19 @@
 }
 
 @media (max-width: 1024px) {
-  .movie {
+  .loading__movie {
   width: 50%;
 }
 }
 
 @media (max-width: 768px) {
-  .movie {
+  .loading__movie {
   width: 80%;
 }
 }
 
 @media (max-width: 480px) {
-  .movie {
+  .loading__movie {
   width: 100%;
 }
 }

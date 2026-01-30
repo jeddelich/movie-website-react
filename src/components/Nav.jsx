@@ -12,7 +12,7 @@ function Nav({
   setAboutModal,
   contactModal,
   setContactModal,
-  setMenuStatus
+  setMenuStatus,
 }) {
   const navigate = useNavigate();
 
@@ -45,11 +45,11 @@ function Nav({
 
   function openMenu() {
     if (aboutModal) {
-      setAboutModal(false)
+      setAboutModal(false);
     } else if (contactModal) {
-      setContactModal(false)
+      setContactModal(false);
     }
-    setMenuStatus(true)
+    setMenuStatus(true);
   }
 
   return (
@@ -125,14 +125,27 @@ function Nav({
                 )}
 
                 <div className="underline"></div>
-                <a onClick={() => navigate("/")}>
-                  <figure className="home__icon--wrapper">
-                    <i
-                      className="fa-solid fa-arrow-right-to-bracket"
-                      //   onClick="window.location.reload();"
-                    ></i>
-                  </figure>
-                </a>
+                {isSearchPage ? (
+                  <div className="search-home__icon--wrapper">
+                    <a onClick={() => navigate("/")}>
+                      <figure className="home__icon--wrapper">
+                        <i
+                          className="fa-solid fa-arrow-right-to-bracket"
+                          //   onClick="window.location.reload();"
+                        ></i>
+                      </figure>
+                    </a>
+                  </div>
+                ) : (
+                  <a onClick={() => navigate("/")}>
+                    <figure className="home__icon--wrapper">
+                      <i
+                        className="fa-solid fa-arrow-right-to-bracket"
+                        //   onClick="window.location.reload();"
+                      ></i>
+                    </figure>
+                  </a>
+                )}
               </li>
             ) : (
               <>

@@ -72,7 +72,7 @@
   text-align: center;
   font-size: 28px;
   font-weight: 500;
-  width: 60%;
+  width: 72%;
   opacity: 80%;
 }
 
@@ -87,6 +87,10 @@
 }
 
 @media (max-width: 1024px) {
+    .movie {
+  width: 50%;
+}
+  
   .movie__title {
   font-size: 24px;
   width: 64%;
@@ -104,10 +108,16 @@
     .movie__list{
       justify-content: center;
     }
+      .movie {
+  width: 80%;
+}
 }
 
 @media (max-width: 480px) {
   .movie__title {
           font-size: 24px;
       }
+        .movie {
+  width: 100%;
+}
 }
