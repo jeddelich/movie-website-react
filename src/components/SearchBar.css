@@ -48,6 +48,7 @@
 
 .search-bar--wrapper2 {
   width: 40vw;
+  position: relative;
 }
 
 .search-bar::placeholder {
@@ -98,7 +99,7 @@
 }
 
 .search-bar--wrapper2:hover .search-bar__form--btn {
-  right: -4px;
+  right: -0.1%;
 }
 
 @media (max-width: 1024px) {
