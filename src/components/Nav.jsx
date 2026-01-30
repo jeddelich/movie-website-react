@@ -105,62 +105,60 @@ function Nav({
                 {isMoviePage ? (
                   <div className="movie-nav__link--anchor2">
                     {" "}
-                    <a
-                      href="#"
+                    <button
                       className="nav__link--anchor nav__link--anchor2"
                       onClick={() => navigate("/")}
                     >
                       Return To Home Page
-                    </a>
+                    </button>
                   </div>
                 ) : (
                   <div className="search-nav__link--anchor2">
                     {" "}
-                    <a
-                      href="#"
+                    <button
                       className="nav__link--anchor nav__link--anchor2"
                       onClick={() => navigate("/")}
                     >
                       Return To Home Page
-                    </a>
+                    </button>
                   </div>
                 )}
 
                 <div className="underline"></div>
                 {isSearchPage ? (
                   <div className="search-home__icon--wrapper">
-                    <a onClick={() => navigate("/")} href="#">
+                    <button onClick={() => navigate("/")}>
                       <figure className="home__icon--wrapper">
                         <i
                           className="fa-solid fa-arrow-right-to-bracket"
                           //   onClick="window.location.reload();"
                         ></i>
                       </figure>
-                    </a>
+                    </button>
                   </div>
                 ) : (
-                  <a onClick={() => navigate("/")} href="#">
+                  <button onClick={() => navigate("/")}>
                     <figure className="home__icon--wrapper">
                       <i
                         className="fa-solid fa-arrow-right-to-bracket"
                         //   onClick="window.location.reload();"
                       ></i>
                     </figure>
-                  </a>
+                  </button>
                 )}
               </li>
             ) : (
               <>
                 <li className="nav__link nav__link--1">
-                  <a className="nav__link--anchor" href="#" onClick={handleAboutModal}>
+                  <button className="nav__link--anchor" onClick={handleAboutModal}>
                     About
-                  </a>
+                  </button>
                   <div className="underline"></div>
                 </li>
                 <li className="nav__link nav__link--1">
-                  <a className="nav__link--anchor" href="#" onClick={handleContactModal}>
+                  <button className="nav__link--anchor" onClick={handleContactModal}>
                     Contact
-                  </a>
+                  </button>
                   <div className="underline"></div>
                 </li>
                 <button className="menu__icon--wrapper" onClick={openMenu}>
