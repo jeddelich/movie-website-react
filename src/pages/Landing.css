@@ -15,23 +15,24 @@
     flex-direction: column;
     width: fit-content;
     align-items: center;
-    padding: 40px 0;
+    padding-top: 56px;
+    height: 100%;
 }
 
 .landing__img--wrapper {
     position: relative;
-    height: 500px;
-    width: 500px;
+    height: 80%;
 }
 
 .landing__welcome {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 6%;
+    top: -6%;
     z-index: 100;
     font-size: 24px;
     font-weight: 500;
+    min-width: 424px;
     color: #2A2A2E;
     opacity: 0;
     animation: fade-in 750ms 2750ms ease forwards;
@@ -71,6 +72,10 @@
     width: 384px;
 }
 
+.landing__welcome {
+    top: 0;
+}
+
 .landing__welcome{
     font-size: 20px;
     transform: translateY(-24%);
@@ -95,6 +100,10 @@
 
   .landing__welcome{
     display: none;
+}
+
+.row {
+    padding-top: 12px;
 }
 
 #landing{
